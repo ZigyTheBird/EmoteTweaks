@@ -7,8 +7,6 @@ on:
         required: true
       MODRINTH_TOKEN:
         required: true
-    env:
-      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}     
 
 
 jobs:
@@ -21,8 +19,6 @@ jobs:
       - name: Get Artifact Id
         uses: actions/github-script@v5
         id: artifact_id
-        env:
-          branch: ${{ env.BRANCH_NAME }}
         with:
           result-encoding: string
           script: |
@@ -63,8 +59,6 @@ jobs:
       - name: Get Artifact Id
         uses: actions/github-script@v5
         id: artifact_id
-        env:
-          branch: ${{ env.BRANCH_NAME }}
         with:
           result-encoding: string
           script: |
