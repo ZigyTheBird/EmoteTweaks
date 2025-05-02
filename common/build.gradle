@@ -1,0 +1,15 @@
+architectury {
+    common rootProject.enabled_platforms.split(',')
+}
+
+dependencies {
+    // We depend on Fabric Loader here to use the Fabric @Environment annotations,
+    // which get remapped to the correct annotations on each platform.
+    // Do NOT use other classes from Fabric Loader.
+    modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+
+    modImplementation "de.maxhenkel.voicechat:voicechat-api:${project.voicechat_api}"
+    modImplementation "io.github.kosmx.emotes:emotesMain:${project.emotecraft}"
+    modImplementation "maven.modrinth:simple-voice-chat:fabric-${rootProject.voicechat}"
+    modImplementation "com.zigythebird.multiloaderutils:zigysmultiloaderutils-common-1.21:$rootProject.multiloader_utils_version"
+}

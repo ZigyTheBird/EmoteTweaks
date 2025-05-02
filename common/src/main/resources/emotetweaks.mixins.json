@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.zigythebird.emotetweaks.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "mixins": [
+    "AnimationBinaryMixin",
+    "AnimationJsonMixin",
+    "KeyframeAnimationPlayerMixin",
+    "ServerEmotePlayMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

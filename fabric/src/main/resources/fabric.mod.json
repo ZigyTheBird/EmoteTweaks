@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "emotetweaks",
+  "version": "${version}",
+  "name": "Emote Tweaks",
+  "description": "Allows you to play sounds with emotes with the help of simple voice chat.",
+  "authors": [
+    "RyanV", "Wolf", "Zigy"
+  ],
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.zigythebird.emotetweaks.fabric.EmoteTweaksFabric"
+    ],
+    "client": [
+      "com.zigythebird.emotetweaks.fabric.client.EmoteTweaksFabricClient"
+    ],
+    "voicechat": [
+      "com.zigythebird.emotetweaks.voicefx.SoundPlugin"
+    ]
+  },
+  "mixins": [
+    "emotetweaks.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*",
+    "emotecraft": ">=${emotecraft}",
+    "voicechat": ">=${voicechat}"
+  }
+}

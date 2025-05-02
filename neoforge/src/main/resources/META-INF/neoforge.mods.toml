@@ -1,0 +1,45 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+modId = "emotetweaks"
+version = "${version}"
+displayName = "Emote Tweaks"
+authors = "RyavV, Wolf, Zigy"
+description = '''
+Allows you to play sounds with emotes with the help of simple voice chat.
+'''
+logoFile = "icon.png"
+
+[[dependencies.emotetweaks]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.emotetweaks]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.emotetweaks]]
+modId = "emotecraft"
+type = "required"
+versionRange = "[${emotecraft},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.emotetweaks]]
+modId = "voicechat"
+type = "required"
+versionRange = "[${voicechat},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "emotetweaks.mixins.json"
