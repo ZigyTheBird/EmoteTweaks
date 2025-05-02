@@ -49,17 +49,8 @@ dependencies {
 }
 
 processResources {
-    var replacedProperties = [
-            version: project.version,
-            voicechat: rootProject.voicechat,
-            emotecraft: rootProject.emotecraft
-    ]
-    inputs.properties replacedProperties
-
     filesMatching('META-INF/neoforge.mods.toml') {
-        expand version: project.version
-        expand voicechat: rootProject.voicechat
-        expand emotecraft: rootProject.emotecraft
+        expand version: project.version, voicechat: rootProject.voicechat, emotecraft: rootProject.emotecraft
     }
 }
 
