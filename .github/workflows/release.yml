@@ -7,6 +7,8 @@ on:
         required: true
       MODRINTH_TOKEN:
         required: true
+    env:
+      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}     
 
 
 jobs:
@@ -15,14 +17,12 @@ jobs:
     steps:
       - name: Checkout Branch
         uses: actions/checkout@v3
-        with:
-          ref: ${GITHUB_REF##*/}
 
       - name: Get Artifact Id
         uses: actions/github-script@v5
         id: artifact_id
         env:
-          branch: '${GITHUB_REF##*/}'
+          branch: ${{ env.BRANCH_NAME }}
         with:
           result-encoding: string
           script: |
@@ -59,14 +59,12 @@ jobs:
     steps:
       - name: Checkout Branch
         uses: actions/checkout@v3
-        with:
-          ref: ${GITHUB_REF##*/}
           
       - name: Get Artifact Id
         uses: actions/github-script@v5
         id: artifact_id
         env:
-          branch: '${GITHUB_REF##*/}'
+          branch: ${{ env.BRANCH_NAME }}
         with:
           result-encoding: string
           script: |
