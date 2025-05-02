@@ -18,6 +18,8 @@ jobs:
 
       - name: Get Artifact Id
         uses: actions/github-script@v5
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}   
         id: artifact_id
         with:
           result-encoding: string
@@ -58,6 +60,8 @@ jobs:
           
       - name: Get Artifact Id
         uses: actions/github-script@v5
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}   
         id: artifact_id
         with:
           result-encoding: string
