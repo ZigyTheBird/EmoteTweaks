@@ -44,17 +44,8 @@ dependencies {
 }
 
 processResources {
-    var replacedProperties = [
-            version: project.version,
-            voicechat: rootProject.voicechat,
-            emotecraft: rootProject.emotecraft
-    ]
-    inputs.properties replacedProperties
-
     filesMatching('fabric.mod.json') {
-        expand version: project.version
-        expand voicechat: rootProject.voicechat
-        expand emotecraft: rootProject.emotecraft
+        expand version: project.version, voicechat: rootProject.voicechat, emotecraft: rootProject.emotecraft
     }
 }
 
