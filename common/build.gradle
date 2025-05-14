@@ -12,4 +12,5 @@ dependencies {
     modImplementation "io.github.kosmx.emotes:emotesMain:${project.emotecraft}"
     modImplementation "maven.modrinth:simple-voice-chat:fabric-${rootProject.voicechat}"
     modImplementation "com.zigythebird.multiloaderutils:zigysmultiloaderutils-common-1.21:$rootProject.multiloader_utils_version"
+    modImplementation "maven.modrinth:emotecraft:${rootProject.emotecraft}+${rootProject.minecraft_version}-fabric"
 }

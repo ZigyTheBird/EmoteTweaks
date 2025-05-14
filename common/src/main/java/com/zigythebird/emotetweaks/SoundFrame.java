@@ -1,6 +1,6 @@
 package com.zigythebird.emotetweaks;
 
-import com.zigythebird.emotetweaks.mixin.AnimationBinaryMixin;
+import io.github.kosmx.emotes.common.network.CommonNetwork;
 
 public class SoundFrame {
     public final int tick;
@@ -12,7 +12,7 @@ public class SoundFrame {
     }
 
     public int calculateSize() {
-        return 4 + AnimationBinaryMixin.getStringSize(value);
+        return 4 + CommonNetwork.stringSize(value);
     }
 
     @Override

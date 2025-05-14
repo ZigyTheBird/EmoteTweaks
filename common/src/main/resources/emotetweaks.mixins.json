@@ -4,10 +4,9 @@
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "mixins": [
-    "AnimationBinaryMixin",
     "AnimationJsonMixin",
     "KeyframeAnimationPlayerMixin",
-    "ServerEmotePlayMixin"
+    "IPlayerEntityMixin"
   ],
   "client": [],
   "injectors": {

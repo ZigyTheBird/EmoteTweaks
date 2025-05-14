@@ -41,15 +41,16 @@ public class KeyframeAnimationPlayerMixin {
     @Inject(method = "<init>(Ldev/kosmx/playerAnim/core/data/KeyframeAnimation;I)V", at = @At("TAIL"))
     private void onConstruct(KeyframeAnimation emote, int t, CallbackInfo ci) {
         if(emote.extraData.containsKey("name")) {
-            Path autoFile = PlatformUtil.getGamePath().resolve("emotes" + FileSystems.getDefault().getSeparator() + ((String) emote.extraData.get("name")).replace("\"", "") + ".wav");
-            if (autoFile.toFile().exists()) {
-                try {
+            try {
+                Path autoFile = PlatformUtil.getGamePath().resolve("emotes" + FileSystems.getDefault().getSeparator() + ((String) emote.extraData.get("name")).replace("\"", "") + ".wav");
+                if (autoFile.toFile().exists()) {
                     short[] pairedSound = loadAudioFile(autoFile);
-                    if (pairedSound != null)
+                    if (pairedSound != null) {
                         SoundPlugin.playSound(pairedSound);
-                } catch (UnsupportedAudioFileException | IOException e) {
-                    e.printStackTrace();
+                    }
                 }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
         if(emote.extraData.containsKey("sound_effects")) {
