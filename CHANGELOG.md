@@ -1,2 +1,1 @@
-crouchCancel extra data in animations now works again and added to the CF and Modrinth descriptions.
-Cleaned up the code and fixed a crash.
+Fix mod being uploaded to CurseForge and Modrinth incorrectly causing crash on startup.
