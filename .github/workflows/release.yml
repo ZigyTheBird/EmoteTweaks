@@ -115,8 +115,8 @@ jobs:
           version: ${{ steps.gradle_properties.outputs.mod_version }}
 
           files: |
-            ./fabric/build/libs/!(*-@(dev|sources|javadoc|all)).jar
-            ./fabric/build/libs/*-@(dev|sources|javadoc|all).jar
+            ./fabric/build/libs/!(*-@(dev|sources|javadoc|all|dev-shadow)).jar
+            ./fabric/build/libs/*-@(dev|sources|javadoc|all|dev-shadow).jar
           version-type: release
 
           loaders: fabric
