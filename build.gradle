@@ -37,6 +37,7 @@ subprojects {
         maven {
             url = "https://api.modrinth.com/maven"
         }
+        mavenLocal()
         maven {
             name "zigythebirdMods"
             url "https://maven.zigythebird.com/mods"

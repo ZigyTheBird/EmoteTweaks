@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.sound.sampled.UnsupportedAudioFileException;
 
+import com.zigythebird.emotetweaks.EmoteTweaks;
 import de.maxhenkel.voicechat.api.ForgeVoicechatPlugin;
 import de.maxhenkel.voicechat.api.VoicechatApi;
 import de.maxhenkel.voicechat.api.VoicechatPlugin;
@@ -19,7 +20,7 @@ public class SoundPlugin implements VoicechatPlugin {
     public static VoicechatApi voicechatApi;
     public static VoicechatServerApi voicechatServerApi;
 
-    private static List<SFXThread> runningThreads = new ArrayList<>();
+    private static final List<SFXThread> runningThreads = new ArrayList<>();
 
     @Override
     public String getPluginId() {
@@ -46,7 +47,7 @@ public class SoundPlugin implements VoicechatPlugin {
             runningThreads.add(thread);
             thread.startPlaying();
         } catch (UnsupportedAudioFileException | IOException e) {
-            e.printStackTrace();
+            EmoteTweaks.LOGGER.error(e.toString());
         }
     }
 
